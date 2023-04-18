@@ -11,12 +11,16 @@ def image_like_pdf_to_text(filename):
                                 poppler_path=os.getcwd()+r'\poppler-0.68.0\bin')
     result = ''
 
-    try:
-        for page in image:
-            result += pytesseract.image_to_string(page, lang='eng+rus')
+    for page in image:
+        result += pytesseract.image_to_string(page, lang='eng+rus')
 
+    return result
+
+if __name__ == '__main__':
+    result = ''
+    
+    try:
+        result = image_like_pdf_to_text(filename)
     finally:
         write_file(result)
-        return result
-        
-print(image_like_pdf_to_text(filename))
+

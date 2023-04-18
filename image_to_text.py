@@ -13,6 +13,10 @@ def image_to_text(filename):
     return string
 
 if __name__ == '__main__':
-    result = image_to_text(filename)  
-    write_file(result)
+    result = ''
+    
+    try:
+        result = image_to_text(filename)
+    finally:
+        write_file(result)
     

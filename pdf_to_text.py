@@ -1,5 +1,6 @@
 import io
 import os
+
 from pdfminer.converter import TextConverter
 from pdfminer.pdfinterp import PDFPageInterpreter
 from pdfminer.pdfinterp import PDFResourceManager
@@ -22,6 +23,9 @@ def pdf_to_text(filename):
     return text
 
 if __name__ == '__main__':
-    result = pdf_to_text(filename)
-    write_file(result)
+    result = ''
     
+    try:
+        result = pdf_to_text(filename)
+    finally:
+        write_file(result)
