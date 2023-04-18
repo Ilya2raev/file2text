@@ -14,9 +14,9 @@ def image_like_pdf_to_text(filename):
     try:
         for page in image:
             result += pytesseract.image_to_string(page, lang='eng+rus')
+            write_file(result)
 
     finally:
-        write_file(result)
         return result
 
 if __name__ == '__main__':
