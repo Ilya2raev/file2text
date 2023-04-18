@@ -18,5 +18,6 @@ def image_like_pdf_to_text(filename):
     finally:
         write_file(result)
         return result
-        
-image_like_pdf_to_text(filename)
+
+if __name__ == '__main__':
+    image_like_pdf_to_text(filename)
